@@ -1,0 +1,24 @@
+using System;
+namespace ConstructorOverload
+{
+ class Program
+ {
+ Program()
+ {
+ Console.WriteLine("C# code");
+ }
+ Program(String brand)
+ {
+ Console.WriteLine("C# is not easy");
+ Console.WriteLine("program " + brand);
+ }
+ static void Main(string[] args)
+ {
+ Program C1 = new Program();
+ Console.WriteLine();
+ Program C2 = new Program("C#");
+ Console.WriteLine();
+ Console.ReadLine();
+ }
+ }
+}
