@@ -1,0 +1,32 @@
+1. Using Switch Case Implement Vowels
+
+using System;
+
+namespace VowelChecker
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.Write("Enter a character: ");
+            char input = Console.ReadKey().KeyChar;
+            Console.WriteLine();
+
+            switch (char.ToLower(input))
+            {
+                case 'a':
+                case 'e':
+                case 'i':
+                case 'o':
+                case 'u':
+                    Console.WriteLine("The input is a vowel.");
+                    break;
+                default:
+                    Console.WriteLine("The input is not a vowel.");
+                    break;
+            }
+
+            Console.ReadKey();
+        }
+    }
+}
