@@ -1,0 +1,73 @@
+GoTo the Project > right click > add > new item > XML file > done
+Paste this code in XML file  :
+
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Books>
+  <Book>
+    <Id>1</Id>
+    <Name>Drift</Name>
+    <Author>L.T Ryan</Author>
+    <Price>$50.00</Price>
+  </Book>
+  <Book>
+    <Id>2</Id>
+    <Name>Downburst</Name>
+    <Author>L.T Ryan</Author>
+    <Price>$30.00</Price>
+  </Book>
+  <Book>
+    <Id>3</Id>
+    <Name>Exiles</Name>
+    <Author>Jane</Author>
+    <Price>$20.00</Price>
+  </Book>
+  <Book>
+    <Id>4</Id>
+    <Name>12 Rules for Life</Name>
+    <Author>Jordan</Author>
+    <Price>$10.00</Price>
+  </Book>
+  <Book>
+    <Id>5</Id>
+    <Name>Think Again</Name>
+    <Author>Adam</Author>
+    <Price>$19.00</Price>
+  </Book>
+</Books>
+
+Copy the path of XML file > paste the XML path before .xml > done
+Main File :
+
+using System;
+using System.Xml;
+namespace ReadXml1
+{
+    class Class1
+    {
+        static void Main(string[] args)
+        {
+            // Create an isntance of XmlTextReader and call Read method to read the file
+            XmlTextReader textReader = new XmlTextReader("xml ka path.xml");
+            textReader.Read();
+            // If the node has value
+            while (textReader.Read())
+            {
+                // Move to fist element
+                textReader.MoveToElement();
+                Console.WriteLine("XmlTextReader Properties Test");
+                Console.WriteLine("===================");
+                // Read this element's properties and display them on console
+                Console.WriteLine("Name:" + textReader.Name);
+                Console.WriteLine("Base URI:" + textReader.BaseURI);
+                Console.WriteLine("Local Name:" + textReader.LocalName);
+                Console.WriteLine("Attribute Count:" + textReader.AttributeCount.ToString());
+                Console.WriteLine("Depth:" + textReader.Depth.ToString());
+                Console.WriteLine("Line Number:" + textReader.LineNumber.ToString());
+                Console.WriteLine("Node Type:" + textReader.NodeType.ToString());
+                Console.WriteLine("Attribute Count:" + textReader.Value.ToString());
+                Console.ReadLine();
+            }
+        }
+    }
+}
